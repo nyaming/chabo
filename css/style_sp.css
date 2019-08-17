@@ -367,6 +367,7 @@
     #main_visual {
         background-image: url(../images/main_visual_sp.jpg);
         height: 120vw;
+        height: calc(100vh - 60px);
     }
 
     .news_heading {
@@ -419,7 +420,7 @@
         font-size: 30px;
     }
     .contents_title::after {
-        font-size: 12px;
+        font-size: 10px;
     }
     .contents_subtitle {
         font-size: 14px;
