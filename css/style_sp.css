@@ -394,7 +394,8 @@
     .contents_txt {
         width: 90%;
         /* bottom: -40vw; */
-        bottom: -56vw;
+        /* bottom: -56vw; */
+        bottom: -49vw;
 }
     }
     .contents_subtitle, 
