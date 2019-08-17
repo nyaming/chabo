@@ -367,7 +367,7 @@
     #main_visual {
         background-image: url(../images/main_visual_sp.jpg);
         height: 120vw;
-        height: calc(100vh - 60px);
+        /* height: calc(100vh - 60px); */
     }
 
     .news_heading {
