@@ -315,6 +315,9 @@
         display: none;
     }
 
+
+    
+
     #main::after {
         height: 300px;
     }
@@ -383,9 +386,15 @@
         padding: 1px 2px;
     }
 
+    #main >.inner {
+        padding-top: 60px;
+    }
+
     .contents_txt {
         width: 90%;
-        bottom: -40vw;
+        /* bottom: -40vw; */
+        bottom: -56vw;
+}
     }
     .contents_subtitle, 
     .contents_desc {
@@ -404,6 +413,22 @@
     .chaboforthefuture {
         margin-top: 82.7vw;
     }
+
+    /* ここから */
+    .contents_title {
+        font-size: 30px;
+    }
+    .contents_title::after {
+        font-size: 12px;
+    }
+    .contents_subtitle {
+        font-size: 14px;
+    }
+    .contents_desc {
+        font-size: 12px;
+    }
+    /* ここまで */
+
 
     .footer_logo {
         width: 120px;
