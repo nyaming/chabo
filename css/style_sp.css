@@ -7,7 +7,6 @@
 5.max-width: 480px スマホ
 */
 
-
 @media screen and (max-width: 1070px) {
     .main_lead {
         justify-content: space-between;
@@ -26,7 +25,6 @@
         width: 63.8vw;
         height: 55.6vw;
     }
-
 
     .whatischabo > .inner,
     .lifewithchabo > .inner,
@@ -234,10 +232,6 @@
     .header_nav {
         display: none;
     }
-   
-    #main_visual {
-        /* height: 400px; */
-    }
 
     .news {
         padding: 10px 0;
@@ -315,34 +309,29 @@
         display: none;
     }
 
-
-    
-
     #main::after {
         height: 300px;
     }
     .footer_logo {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
     }
     .footer_nav {
         display: none;
     }
     .footer_copyright {
-        padding-top: 5px;
+        padding-top: 0;
     }
-
 }
 
 @media screen and (max-width: 480px) {
-    .sp480 {
+    /* .sp480 {
         display: block;
-    }
+    } */
     #header {
         height: 60px;
     }
     #header > .inner {
-        /* padding-top: 5px; */
         padding-right: 3px;
         padding-left: 3px;
     }
@@ -364,7 +353,7 @@
         left: -1px;
     }
 
-    #main_visual {
+    #toppage #main_visual {
         background-image: url(../images/main_visual_sp.jpg);
         height: 120vw;
         /* height: calc(100vh - 60px); */
@@ -397,12 +386,22 @@
         /* bottom: -56vw; */
         bottom: -49vw;
     }
+    .contents_title {
+        font-size: 30px;
+    }
+    .contents_title::after {
+        font-size: 10px;
+    }
     .contents_subtitle, 
     .contents_desc {
         margin-left: 0;
     }
     .contents_subtitle {
         margin-top: 8vw;
+        font-size: 14px;
+    }
+    .contents_desc {
+        font-size: 12px;
     }
     .contents_link_btn {
         width: 200px;
@@ -415,25 +414,12 @@
         margin-top: 82.7vw;
     }
 
-    /* ここから */
-    .contents_title {
-        font-size: 30px;
+    .footer_links {
+        margin: 40px 0;
     }
-    .contents_title::after {
-        font-size: 10px;
-    }
-    .contents_subtitle {
-        font-size: 14px;
-    }
-    .contents_desc {
-        font-size: 12px;
-    }
-    /* ここまで */
-
-
     .footer_logo {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
     .footer_copyright {
         font-size: 1.2rem;
