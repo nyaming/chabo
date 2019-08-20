@@ -338,8 +338,44 @@ body {
 .sp {
     display: none;
 }
-/* .sp480 {
+.sp480 {
     display: none;
+}
+
+/* アニメーション */
+.js-scroll {
+	opacity:0;
+	transition: all 1.2s;
+	transform:translate(0px,120px) scale(1.1);
+}
+.js-scroll-slow {
+	opacity:0;
+	transition: all 2s;
+	transform:translate(0px,120px) scale(1.1);
+}
+.js-scroll-in {
+	opacity:1;
+	transform:translate(0px,0px) scale(1);
+}
+.js-scroll-blur {
+	opacity:0;
+	transition: all 1s;
+	-webkit-filter: blur(5px);
+	filter: blur(5px);
+	/* transform:translate(0px,180px); */
+}   
+.js-scroll-blur-in {
+	-webkit-filter: blur(0);
+	filter: blur(0);
+	opacity:1;
+	/* transform:translate(0px,0px); */
+}
+/* .effect{
+	transition: all 1s;
+	transform:translate(0px,120px);
+}
+.effect-in{
+	transform:translate(0px,0px);
 } */
 
 /* ---------------------------------
@@ -978,30 +1014,12 @@ body {
     opacity: .6;
 }
 
-
-/* ---------------------------------
-  6. 下層ページ:チャボを知る
------------------------------------- */
-.subpage_whatischabo #main_visual {
-    background-image: url(../images/whatischabo/main_visual.jpg);
-    background-position: 70% center;
-}
+/* 他、下層共通パーツ */
 .subpage #main {
     padding: 150px 0 0;
 }
 .subpage .section {
     margin-bottom: 160px;
-}
-
-/* セクション1つめ */
-.subpage_whatischabo .section1 {
-    background-image: url(../images/whatischabo/whatischabo_img1.jpg);
-    background-position-x: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
 }
 .subpage .section_title {
     font-size: 5.8rem;
@@ -1024,23 +1042,12 @@ body {
     margin-bottom: 20px;
     line-height: 2.4;
 }
-@media screen and (max-width: 1169px) {
-    .subpage_whatischabo .section1 {
-        background-image: url(../images/whatischabo/whatischabo_sp_img1.jpg);
-        padding-bottom: 40%;
-        background-position: center bottom;
-    }
-    .subpage_whatischabo .section_body {
-        width: 100%;
-    }
-}
 @media screen and (max-width: 767px) {
     .subpage #main {
         padding: 100px 0 0;
     }
-    .subpage_whatischabo .section1 {
-        /* padding-bottom: 50%;
-        background-size: 130%; */
+    .subpage .section {
+        margin-bottom: 100px;
     }
     .subpage .section_title {
         font-size: 4.2rem;
@@ -1057,9 +1064,8 @@ body {
     .subpage #main {
         padding: 70px 0 0;
     }
-    .subpage_whatischabo .section1 {
-        padding-bottom: 50%;
-        background-size: 130%;
+    .subpage .section {
+        margin-bottom: 50px;
     }
     .subpage .section_title {
         font-size: 2.8rem;
@@ -1068,21 +1074,169 @@ body {
         margin-top: 20px;
     }
     .subpage .section_desc {
-        /* margin-bottom: 15px; */
         font-size: 1.4rem;
     }  
-
+}
+/* ---------------------------------
+  6. 下層ページ:チャボを知る
+------------------------------------ */
+.subpage_whatischabo #main_visual {
+    background-image: url(../images/whatischabo/main_visual.jpg);
+    background-position: 70% center;
 }
 
-/* セクション2つめ */
-.subpage_whatischabo .section2 {
-    background-image: url(../images/whatischabo/whatischabo_img2.jpg);
+
+/* セクション1つめ */
+.subpage_whatischabo .section1 {
+    background-image: url(../images/whatischabo/whatischabo_img1.jpg);
     background-position-x: 100%;
     background-size: contain;
     background-repeat: no-repeat;
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media screen and (max-width: 1169px) {
+    .subpage_whatischabo .section1 {
+        background-image: url(../images/whatischabo/whatischabo_sp_img1.jpg);
+        padding-bottom: 40%;
+        background-position: center bottom;
+    }
+    .subpage_whatischabo .section_body {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .subpage_whatischabo .section1 {
+        padding-bottom: 50%;
+        background-size: 130%;
+    }
+}
+
+/* セクション2つめ */
+.subpage_whatischabo .section2 {
+    background-image: url(../images/whatischabo/whatischabo_img2.jpg);
+    background-position-x: 0%;
+    background-position-y: 110%;
+    background-size: 55%;
+    background-repeat: no-repeat;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.subpage .section2 .section_body {
+    width: 100%;
+}
+
+/* チャボの品種紹介 */
+.variations {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 5px 25px;
+    width: 46%;
+    position: relative;
+    left: 50%;
+    bottom: -2vw;
+}
+.variations_image {
+    width: 388px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+}
+.variations_name {
+    text-align: center;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    position: relative;
+    top: -40px;
+}
+.variation_detail {
+    margin-bottom: 40px;
+}
+.variation_detail > dt {
+    font-size: 2.4rem;
+    color: #ba5447;
+    border-bottom: 1px solid #999;
+}
+.variation_detail_list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.variation_detail_list_item {
+    width: 20%;
+    padding-left: 15px;
+}
+.variation_detail:nth-child(2) .variation_detail_list_item {
+    width: 25%;
+}
+.variation_detail_list_item a:hover {
+    color: #007d8dcc;
+}
+
+@media screen and (max-width: 1169px) {
+    .subpage_whatischabo .section2 {
+        background-image: none;
+    }
+    .subpage_whatischabo .variations {
+        width: calc(100% - 60px);
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+    }
+    .subpage_whatischabo .variation_detail_list {
+        width: 88%;
+    }
+    .subpage_whatischabo .variation_detail_list_item {
+        font-size: 2.0rem;
+    }
+}
+@media screen and (max-width: 767px) {
+    .subpage_whatischabo .variations {
+        width: calc(100% - 32px);
+        padding: 5px 20px;
+    }
+    .subpage_whatischabo .variation_detail_list {
+        width: 100%;
+    } 
+    .subpage_whatischabo .variation_detail_list_item {
+        padding-left: 2vw;
+        font-size: 3vw;
+    }
+    .variations_name {
+        font-size: 2.2rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    
+    .subpage_whatischabo .variations {
+        padding: 0 10px 5px;
+    }
+    .subpage_whatischabo .variations_name {
+        font-size: 2rem;
+    }
+    .subpage_whatischabo .variation_list {
+        margin-top: -20px;
+    }
+    .subpage_whatischabo .variation_detail {
+        margin-bottom: 10px;
+    }
+    .subpage_whatischabo .variation_detail > dt {
+        font-size: 2rem;
+    }
+    .subpage_whatischabo .variation_detail_list {
+        margin-top: 5px;
+    }
+    .subpage_whatischabo .variation_detail_list_item {
+        padding-left: 0;
+        font-size: 5.5vw;
+        width: 50%;
+        line-height: 1.6;
+    }
+    .subpage_whatischabo .variation_detail:nth-child(2) .variation_detail_list_item {
+        width: 50%;
+    }
 }
 
 /* ---------------------------------
@@ -1092,10 +1246,300 @@ body {
     background-image: url(../images/lifewithchabo/main_visual.jpg);
     background-position: center;
 }
+/* セクション1つめ */
+.subpage_lifewithchabo .section1 {
+    background-image: url(../images/lifewithchabo/lifewithchabo_img1.jpg);
+    background-position-x: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media screen and (max-width: 1169px) {
+    .subpage_lifewithchabo .section1 {
+        background-image: url(../images/lifewithchabo/lifewithchabo_sp_img1.jpg);
+        padding-bottom: 40%;
+        background-position: center bottom;
+    }
+    .subpage_lifewithchabo .section_body {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .subpage_lifewithchabo .section1 {
+        padding-bottom: 50%;
+        background-size: 130%;
+    }
+}
+
+/* セクション2つめ */
+.subpage_lifewithchabo .section2 {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 触れあえる場所 */
+.subpage_lifewithchabo .location_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.subpage_lifewithchabo .location_list_item {
+    width: 49%;
+    background-image: url(../images/lifewithchabo/location1.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    /* background-size: contain; */
+}
+.subpage_lifewithchabo .location_list_item:nth-child(2) {
+    background-image: url(../images/lifewithchabo/location2.png);
+}
+.subpage_lifewithchabo .location_list_item_content {
+    background-color: rgba(255,255,255,0.8);
+    width: 85%;
+    margin: 210px auto 0;
+    padding: 30px 15px;
+}
+
+.subpage_lifewithchabo .location_title {
+    font-size: 2.4rem;
+    line-height: 1.0;
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+.subpage_lifewithchabo .location_title span {
+    font-size: 1.8rem;
+}
+.subpage_lifewithchabo .location_desc {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+.subpage_lifewithchabo .location_detail dt {
+    font-size: 1.4rem;
+    float: left;
+    width: 40%;
+    /* margin-right: 10px; */
+    padding-right: 10px;
+    line-height: 1.2;
+}
+.subpage_lifewithchabo .location_detail dd {
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 767px) {
+    .subpage_lifewithchabo .location_list_item {
+        width: 100%;
+        background-size: contain;
+        margin-bottom: 50px;
+    }
+    .subpage_lifewithchabo .location_list_item_content {
+        margin: 170px auto 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .subpage_lifewithchabo .location_list_item_content {
+        margin: 120px auto 0;
+        width: 95%;
+    }
+    .subpage_lifewithchabo .location_detail {
+        margin-bottom: 5px;
+    }
+    .subpage_lifewithchabo .location_detail dt {
+        /* padding-right: 10px; */
+    }
+    .subpage_lifewithchabo .location_detail dd {
+        float: left;
+        width: 60%;
+    }
+}
+
+
 /* ---------------------------------
   8. 下層ページ:チャボを守る
 ------------------------------------ */
 .subpage_chaboforthefuture #main_visual {
     background-image: url(../images/chaboforthefuture/main_visual.jpg);
     background-position: 7% center;
+}
+/* セクション1つめ */
+.subpage_chaboforthefuture .section1 {
+    background-image: url(../images/chaboforthefuture/chaboforthefuture_img1.jpg);
+    background-position-x: 100%;
+    background-position-y: 100%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 130px;
+}
+@media screen and (max-width: 1169px) {
+    .subpage_chaboforthefuture .section1 {
+        background-image: url(../images/chaboforthefuture/chaboforthefuture_sp_img1.jpg);
+        padding-bottom: 40%;
+        background-size: contain;
+    }
+    .subpage_chaboforthefuture .section_body {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .subpage_chaboforthefuture .section1 {
+        padding-bottom: 50%;
+        background-size: 130%;
+        background-position: 28% 100%;
+    }
+}
+
+/* セクション2つめ */
+.subpage_chaboforthefuture .section2 {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 入会案内 */
+.subpage_chaboforthefuture .information {
+    background-color: rgba(255,255,255,0.8);
+    padding: 30px;
+}
+.information_title {
+    font-size: 2.4rem;
+    color: #ba5447;
+    border-bottom: 1px solid #999;
+    font-weight: normal;
+    margin: 45px 0 20px;
+}
+.information_title:nth-of-type(1) {
+    margin-top: 0;
+}
+.fee {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    border: 1px solid #999;
+    margin-bottom: 10px;
+}
+.fee th,
+.fee td {
+    border: 1px solid #999;
+    vertical-align: middle;
+    text-align: center;
+    padding: 5px 0;
+}
+.fee th {
+    background-color: #e5e5ef;
+}
+.fee th:nth-child(1) {
+    width: 20%;
+}
+.information_note {
+    font-size: 1.4rem;
+}
+.flow_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.flow_list_item {
+    width: 49%;
+    background-color: #e5e5ef;
+    padding: 85px 40px 10px;
+    background-repeat: no-repeat;
+    background-position: center 30px;
+}
+.flow_list_item:nth-child(1) {
+    background-image: url(../images/chaboforthefuture/icon_mail.png);
+}
+.flow_list_item:nth-child(2) {
+    background-image: url(../images/chaboforthefuture/icon_fax.png);
+    background-position-y: 25px;
+}
+.flow_title {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: normal;
+}
+.flow_desc {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+}
+
+/* お申し込みボタン類 */
+.flow_item {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.flow_item a,
+.flow_item > span {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #000;
+    padding: 12px 30px;
+    transition: all 0.3s;
+    position: relative;
+}
+.flow_item a:hover {
+    background-color: rgba(0,125,141,0.6);
+}
+.flow_item .pdf {
+    padding: 12px 10px 12px 0;
+}
+.flow_item .pdf::after {
+    content: "";
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    background: url(../images/chaboforthefuture/icon_pdf.png) no-repeat;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-55%);
+}
+.flow_item .tel {
+    /* font-size: 3.6rem; */
+    font-size: 3.2rem;
+}
+@media screen and (max-width: 1169px)  {
+    .flow_list_item {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+@media screen and (max-width: 767px) {
+    .subpage_chaboforthefuture .flow_list_item {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .subpage_chaboforthefuture .flow_list_item:nth-child(2) {
+        margin-bottom: 0;
+    }
+    .flow_item a, .flow_item > span {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .subpage_chaboforthefuture .information {
+        padding: 15px;
+    }
+    .information_title {
+        font-size: 2rem;
+    }
+    .fee th, .fee td {
+        font-size: 3.6vw;
+    }
+    .flow_item a, .flow_item > span {
+        width: 100%;
+    }
+    .flow_item .tel {
+        font-size: 7.5vw;
+    }
 }

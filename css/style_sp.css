@@ -325,9 +325,9 @@
 }
 
 @media screen and (max-width: 480px) {
-    /* .sp480 {
+    .sp480 {
         display: block;
-    } */
+    }
     #header {
         height: 60px;
     }
@@ -353,7 +353,7 @@
         left: -1px;
     }
 
-    #toppage #main_visual {
+    .toppage #main_visual {
         background-image: url(../images/main_visual_sp.jpg);
         height: 120vw;
         /* height: calc(100vh - 60px); */
