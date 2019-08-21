@@ -8,6 +8,7 @@
   <!-- stylesheet -->
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/style_sp.css">
+  <link rel="stylesheet" href="./js/dist/zoomslider.css">
   <!-- adobe fonts -->
   <script>
         (function(d) {
@@ -25,10 +26,10 @@
 <body class="toppage">
     <header id="header">
         <div class="inner">
-            <div class="header_logo"><a href="#">
-                <img class="header_logo_img" src="./images/logo.svg"     alt="全日本チャボ保存協会">
+            <div class="header_logo"><a href="/">
+                <img class="header_logo_img" src="./images/logo.svg" alt="全日本チャボ保存協会">
             </a></div>
-            <div class="header_logo_type"><a href="#">
+            <div class="header_logo_type"><a href="/">
                 <img class="header_logo_type_img sp" src="./images/logo_type.svg" alt="全日本チャボ保存協会">
             </a></div>
             <div class="header_nav_btn sp">
@@ -49,9 +50,9 @@
                     <li class="nav_item"><a href="./chaboforthefuture/">
                         チャボを守る<span>CHABO for the future</span>
                     </a></li>
-                    <li class="nav_item"><a href="#">
+                    <!-- <li class="nav_item"><a href="#">
                         協会について<span>About us</span>
-                    </a></li>
+                    </a></li> -->
                     <li class="nav_item"><a href="#">
                         お問い合わせ<span>Inquiry</span>
                     </a></li>
@@ -61,6 +62,8 @@
     </header><!-- /#header -->
     
     <section id="main_visual">
+        <div id="main_visual_slider" data-zs-src='["./images/main_visual_pc.jpg", "./images/main_visual2_pc.jpg"]' data-zs-speed="8000" data-zs-switchSpeed="800" data-zs-interval="4500" data-zs-overlay="false" data-zs-bullets="false"></div>
+        </div>
         <div class="news">
             <div class="inner">
                 <ul class="news_list clearfix">
@@ -113,6 +116,14 @@
         <!-- チャボを愛でる -->
         <div class="lifewithchabo content_box">
             <div class="inner">
+                <div class="footprint">
+                    <img class="foot1 js-scroll-up" src="./images/foot_left.png" alt="">
+                    <img class="foot2 js-scroll-up" src="./images/foot_right.png" alt="">
+                    <img class="foot3 js-scroll-up" src="./images/foot_left.png" alt="">
+                    <img class="foot4 js-scroll-up" src="./images/foot_right.png" alt="">
+                    <img class="foot5 js-scroll-up" src="./images/foot_left.png" alt="">
+                    <img class="foot6 js-scroll-up" src="./images/foot_right.png" alt="">
+                </div>
                 <div class="contents_txt js-scroll">
                     <div class="contents_txt_inner">
                         <h2 class="contents_title">チャボを<span>愛</span>でる</h2>
@@ -129,6 +140,14 @@
         <!-- チャボを守る -->
         <div class="chaboforthefuture content_box">
             <div class="inner">
+                    <div class="footprint">
+                        <img class="foot1 js-scroll-up" src="./images/foot_left.png" alt="">
+                        <img class="foot2 js-scroll-up" src="./images/foot_right.png" alt="">
+                        <img class="foot3 js-scroll-up" src="./images/foot_left.png" alt="">
+                        <img class="foot4 js-scroll-up" src="./images/foot_right.png" alt="">
+                        <img class="foot5 js-scroll-up" src="./images/foot_left.png" alt="">
+                        <img class="foot6 js-scroll-up" src="./images/foot_right.png" alt="">
+                        </div>
                 <div class="contents_txt js-scroll">
                     <div class="contents_txt_inner">
                         <h2 class="contents_title">チャボを<span>守</span>る</h2>
@@ -164,6 +183,8 @@
             <small>Copyright 2019 Japan Association of CHABO</small>
         </div>
     </footer>
+    <script src="./js/modernizr-custom.js"></script>
+    <script src="./js/dist/jquery.zoomslider.min.js"></script>
     <script src="./js/common.js"></script>
 </body>
 </html>

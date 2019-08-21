@@ -357,26 +357,149 @@ body {
 	opacity:1;
 	transform:translate(0px,0px) scale(1);
 }
-.js-scroll-blur {
+.js-scroll-up {
 	opacity:0;
-	transition: all 1s;
-	-webkit-filter: blur(5px);
-	filter: blur(5px);
-	/* transform:translate(0px,180px); */
-}   
-.js-scroll-blur-in {
-	-webkit-filter: blur(0);
-	filter: blur(0);
+}
+.js-scroll-up-in {
 	opacity:1;
-	/* transform:translate(0px,0px); */
 }
-/* .effect{
-	transition: all 1s;
-	transform:translate(0px,120px);
+
+/* 足跡 */
+.footprint img {
+    width: 60px;
+    height: 80px;
+    position: absolute;
 }
-.effect-in{
-	transform:translate(0px,0px);
-} */
+/* 1ブロックめ */
+.lifewithchabo .footprint .foot1 {
+    top: -350px;
+    left: 200px;
+    transform: rotate(130deg);
+    transition: all 1s;
+}
+.lifewithchabo .footprint .foot2 {
+    top: -260px;
+    left: 190px;
+    transform: rotate(110deg);
+    transition: all 1s 0.5s;
+}
+.lifewithchabo .footprint .foot3 {
+    top: -300px;
+    left: 290px;
+    transform: rotate(150deg);
+    transition: all 1s 1s;
+}
+.lifewithchabo .footprint .foot4 {
+    top: -200px;
+    left: 280px;
+    transform: rotate(140deg);
+    transition: all 1s 1.5s;
+}
+.lifewithchabo .footprint .foot5 {
+    top: -220px;
+    left: 375px;
+    transform: rotate(150deg);
+    transition: all 1s 2s;
+}
+.lifewithchabo .footprint .foot6 {
+    top: -120px;
+    left: 350px;
+    transform: rotate(160deg);
+    transition: all 1s 2.5s;
+}
+/* 2ブロックめ */
+.chaboforthefuture .footprint .foot1 {
+    top: -300px;
+    right: 450px;
+    transform: rotate(230deg);
+    transition: all 1s;
+}
+.chaboforthefuture .footprint .foot2 {
+    top: -230px;
+    right: 400px;
+    transform: rotate(210deg);
+    transition: all 1s 0.5s;
+}
+.chaboforthefuture .footprint .foot3 {
+    top: -230px;
+    right: 530px;
+    transform: rotate(250deg);
+    transition: all 1s 1s;
+}
+.chaboforthefuture .footprint .foot4 {
+    top: -140px;
+    right: 490px;
+    transform: rotate(230deg);
+    transition: all 1s 1.5s;
+}
+.chaboforthefuture .footprint .foot5 {
+    top: -140px;
+    right: 610px;
+    transform: rotate(240deg);
+    transition: all 1s 2s;
+}
+.chaboforthefuture .footprint .foot6 {
+    top: -50px;
+    right: 570px;
+    transform: rotate(210deg);
+    transition: all 1s 2.5s;
+}
+@media only screen and (max-width: 1169px) {
+    .footprint img {
+        width: 6vw;
+        height: 8vw;
+    }
+    /* 1ブロックめ */
+    .lifewithchabo .footprint .foot1 {
+        top: -26vw;
+        left: 17vw;
+    }
+    .lifewithchabo .footprint .foot2 {
+        top: -18vw;
+        left: 17vw;
+    }
+    .lifewithchabo .footprint .foot3 {
+        top: -21vw;
+        left: 26vw;
+    }
+    .lifewithchabo .footprint .foot4 {
+        top: -12vw;
+        left: 26vw;
+    }
+    .lifewithchabo .footprint .foot5 {
+        top: -16vw;
+        left: 35vw;
+    }
+    .lifewithchabo .footprint .foot6 {
+        top: -8vw;
+        left: 33vw;
+    }
+    /* 2ブロックめ */
+    .chaboforthefuture .footprint .foot1 {
+        top: -29vw;
+        right: 46vw;
+    }
+    .chaboforthefuture .footprint .foot2 {
+        top: -21vw;
+        right: 44vw;
+    }
+    .chaboforthefuture .footprint .foot3 {
+        top: -22vw;
+        right: 55vw;
+    }
+    .chaboforthefuture .footprint .foot4 {
+        top: -14vw;
+        right: 50vw;
+    }
+    .chaboforthefuture .footprint .foot5 {
+        top: -15vw;
+        right: 62vw;
+    }
+    .chaboforthefuture .footprint .foot6 {
+        top: -8vw;
+        right: 59vw;
+    }
+}
 
 /* ---------------------------------
   1. #header
@@ -436,7 +559,7 @@ body {
 }
 .header_nav .nav_item {
     padding: 5px 5px 5px;
-    width: 20%;
+    width: 25%; /* 5つなら20% */
     text-align: center;
     border-right: 1px solid #ddd;
 }
@@ -469,14 +592,25 @@ body {
   2. #main_visual
 ------------------------------------ */
 .toppage #main_visual {
-    height: 64.17vw;
+    position: relative;
+    box-shadow: 0 10px 20px 2px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+.toppage #main_visual_slider {
+    overflow: hidden;
+    width: 100%;
+    min-height: 600px;
+    /* height: 64.17vw;
+    max-height: 970px; */
+    background-color: #999;
+}
+.toppage .main_visual {
+    /* height: 64.17vw;
     max-height: 970px;
     background: url("../images/main_visual.jpg") no-repeat;
     background-size: cover;
-    background-position: center;
-    box-shadow: 0 10px 20px 2px rgba(0,0,0,0.1);
-    position: relative;
-    z-index: 10;
+    background-position: center; */
+    /* position: relative; */
 }
 
 .news {
@@ -757,6 +891,7 @@ body {
     background-size: contain;
     padding-top: 140px;
     padding-bottom: 100px;
+    position: relative;
 }
 .lifewithchabo .contents_txt {
     margin-left: auto;
@@ -792,6 +927,7 @@ body {
     background-size: contain;
     padding-top: 140px;
     padding-bottom: 100px;
+    position: relative;
 }
 .chaboforthefuture::before {
     content: "";

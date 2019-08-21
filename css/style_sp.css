@@ -328,6 +328,9 @@
     .sp480 {
         display: block;
     }
+    .pc480 {
+        display: none;
+    }
     #header {
         height: 60px;
     }
@@ -352,11 +355,9 @@
     .header_nav_btn .nav_btn_txt  {
         left: -1px;
     }
-
-    .toppage #main_visual {
-        background-image: url(../images/main_visual_sp.jpg);
-        height: 120vw;
-        /* height: calc(100vh - 60px); */
+    .toppage #main_visual_slider {
+        /* height: 120vw;  */
+        min-height: 600px;
     }
 
     .news_heading {
