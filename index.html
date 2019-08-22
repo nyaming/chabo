@@ -8,7 +8,7 @@
   <!-- stylesheet -->
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/style_sp.css">
-  <link rel="stylesheet" href="./js/dist/zoomslider.css">
+  <link rel="stylesheet" href="./css/slider-pro.min.css">
   <!-- adobe fonts -->
   <script>
         (function(d) {
@@ -60,10 +60,21 @@
             </nav>
         </div>
     </header><!-- /#header -->
-    
     <section id="main_visual">
-        <div id="main_visual_slider" data-zs-src='["./images/main_visual_pc.jpg", "./images/main_visual2_pc.jpg"]' data-zs-speed="8000" data-zs-switchSpeed="800" data-zs-interval="4500" data-zs-overlay="false" data-zs-bullets="false"></div>
-        </div>
+        <div id="slider" class="slider-pro">
+                <div class="sp-slides">
+                    <div class="sp-slide">
+                    <img class="sp-image" src="./images/main_visual_pc.jpg" />
+                    </div>
+                    <div class="sp-slide">
+                    <img class="sp-image" src="./images/main_visual2_pc.jpg" />
+                    </div>
+                    <div class="sp-slide">
+                    <img class="sp-image" src="./images/main_visual3_pc.jpg" />
+                    </div>
+            <!--/ sp-slides--></div>
+        <!--/ slider--></div>
+        
         <div class="news">
             <div class="inner">
                 <ul class="news_list clearfix">
@@ -81,8 +92,8 @@
     <main id="main">
         <div class="inner">
             <div class="main_lead">
-                <div class="main_lead_title js-scroll-slow">
-                    <img class="pc" src="./images/main_lead_title.svg" alt="紅に灯つづけるは日本の心">
+                <div class="main_lead_title">
+                    <img class="pc js-scroll-slow" src="./images/main_lead_title.svg" alt="紅に灯つづけるは日本の心">
                     <img class="sp" src="./images/main_lead_title_sp.svg" alt="紅に灯つづけるは日本の心">
                 </div>
                 <div class="main_lead_body js-scroll-slow">
@@ -183,8 +194,28 @@
             <small>Copyright 2019 Japan Association of CHABO</small>
         </div>
     </footer>
-    <script src="./js/modernizr-custom.js"></script>
-    <script src="./js/dist/jquery.zoomslider.min.js"></script>
+    <script src="./js/jquery.sliderPro.min.js"></script>
+    <script>
+        $(function(){
+             $('#slider').sliderPro({
+                 width: '100%',
+                 height: 600,
+                 slideDistance:0,
+                 touchSwipe: false,
+                 buttons: false,
+                 fade: true,
+                 fadeDuration: 1500,
+                 autoplayDelay: 6000,
+                 aspectRatio: 2.0,
+                 breakpoints: {
+                    480: {
+                        aspectRatio: -1,
+                        height: 400
+                    }   
+                }
+             });
+        });
+    </script>
     <script src="./js/common.js"></script>
 </body>
 </html>

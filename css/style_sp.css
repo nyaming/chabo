@@ -355,10 +355,6 @@
     .header_nav_btn .nav_btn_txt  {
         left: -1px;
     }
-    .toppage #main_visual_slider {
-        /* height: 120vw;  */
-        min-height: 600px;
-    }
 
     .news_heading {
         font-size: 1.6rem;

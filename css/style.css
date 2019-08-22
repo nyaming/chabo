@@ -346,7 +346,7 @@ body {
 .js-scroll {
 	opacity:0;
 	transition: all 1.2s;
-	transform:translate(0px,120px) scale(1.1);
+	transform:translate(0px,50px) scale(1.1);
 }
 .js-scroll-slow {
 	opacity:0;
@@ -596,23 +596,6 @@ body {
     box-shadow: 0 10px 20px 2px rgba(0,0,0,0.1);
     z-index: 10;
 }
-.toppage #main_visual_slider {
-    overflow: hidden;
-    width: 100%;
-    min-height: 600px;
-    /* height: 64.17vw;
-    max-height: 970px; */
-    background-color: #999;
-}
-.toppage .main_visual {
-    /* height: 64.17vw;
-    max-height: 970px;
-    background: url("../images/main_visual.jpg") no-repeat;
-    background-size: cover;
-    background-position: center; */
-    /* position: relative; */
-}
-
 .news {
     background-color:rgba(0,0,0,0.6);
     position: absolute;
