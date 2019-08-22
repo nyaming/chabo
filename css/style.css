@@ -345,13 +345,13 @@ body {
 /* アニメーション */
 .js-scroll {
 	opacity:0;
-	transition: all 1.2s;
+	transition: all 1.0s;
 	transform:translate(0px,50px) scale(1.1);
 }
 .js-scroll-slow {
 	opacity:0;
-	transition: all 2s;
-	transform:translate(0px,120px) scale(1.1);
+	transition: all 1.0s;
+	transform:translate(0px,0px) scale(1.1);
 }
 .js-scroll-in {
 	opacity:1;
@@ -381,31 +381,31 @@ body {
     top: -260px;
     left: 190px;
     transform: rotate(110deg);
-    transition: all 1s 0.5s;
+    transition: all 1s 0.2s;
 }
 .lifewithchabo .footprint .foot3 {
     top: -300px;
     left: 290px;
     transform: rotate(150deg);
-    transition: all 1s 1s;
+    transition: all 1s 0.4s;
 }
 .lifewithchabo .footprint .foot4 {
     top: -200px;
     left: 280px;
     transform: rotate(140deg);
-    transition: all 1s 1.5s;
+    transition: all 1s 0.6s;
 }
 .lifewithchabo .footprint .foot5 {
     top: -220px;
     left: 375px;
     transform: rotate(150deg);
-    transition: all 1s 2s;
+    transition: all 1s 0.8s;
 }
 .lifewithchabo .footprint .foot6 {
     top: -120px;
     left: 350px;
     transform: rotate(160deg);
-    transition: all 1s 2.5s;
+    transition: all 1s 1.0s;
 }
 /* 2ブロックめ */
 .chaboforthefuture .footprint .foot1 {
@@ -418,31 +418,31 @@ body {
     top: -230px;
     right: 400px;
     transform: rotate(210deg);
-    transition: all 1s 0.5s;
+    transition: all 1s 0.2s;
 }
 .chaboforthefuture .footprint .foot3 {
     top: -230px;
     right: 530px;
     transform: rotate(250deg);
-    transition: all 1s 1s;
+    transition: all 1s 0.4s;
 }
 .chaboforthefuture .footprint .foot4 {
     top: -140px;
     right: 490px;
     transform: rotate(230deg);
-    transition: all 1s 1.5s;
+    transition: all 1s 0.6s;
 }
 .chaboforthefuture .footprint .foot5 {
     top: -140px;
     right: 610px;
     transform: rotate(240deg);
-    transition: all 1s 2s;
+    transition: all 1s 0.8s;
 }
 .chaboforthefuture .footprint .foot6 {
     top: -50px;
     right: 570px;
     transform: rotate(210deg);
-    transition: all 1s 2.5s;
+    transition: all 1s 1.0s;
 }
 @media only screen and (max-width: 1169px) {
     .footprint img {
