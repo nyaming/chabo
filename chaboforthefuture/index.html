@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
   <title>チャボを守る | 全日本チャボ保存協会 公式サイト</title>
   <!-- stylesheet -->
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/style_sp.css">
   <!-- adobe fonts -->
   <script>
         (function(d) {
@@ -21,48 +21,51 @@
       </script>
 </head>
 <body class="subpage subpage_chaboforthefuture">
-    <header id="header">
+    <header id="header" class="header">
         <div class="inner">
-            <div class="header_logo"><a href="#">
-                <img class="header_logo_img" src="../images/logo.svg"     alt="全日本チャボ保存協会">
+            <div class="header_logo"><a href="/">
+                <img class="header_logo_img" src="../images/logo.svg" alt="全日本チャボ保存協会">
             </a></div>
-            <div class="header_logo_type"><a href="#">
+            <div class="header_logo_type"><a href="/">
                 <img class="header_logo_type_img sp" src="../images/logo_type.svg" alt="全日本チャボ保存協会">
             </a></div>
-            <div class="header_nav_btn sp">
+            <div class="header_nav_btn sp" id="sp_menu_btn">
                 <span class="nav_btn_line"></span>
                 <span class="nav_btn_line"></span>
                 <span class="nav_btn_line"></span>
                 <span class="nav_btn_txt">MENU</span>
             </div>
-            <nav class="header_nav">
+            <nav class="header_nav close">
+                <a href="/" class="header_nav_logo sp"><img src="../images/logo_w.svg"></a>
                 <ul class="nav_list">
-                    <!-- <li class="nav_item active">トップページ</li> -->
-                    <li class="nav_item"><a href="#">
+                    <li class="nav_item"><a href="/">
+                        トップページ<span>Top page</span>
+                    </a></li>
+                    <li class="nav_item"><a href="../whatischabo/">
                         チャボを知る<span>What is CHABO?</span>
                     </a></li>
-                    <li class="nav_item"><a href="#">
+                    <li class="nav_item"><a href="../lifewithchabo/">
                         チャボを愛でる<span>Life with CHABO</span>
                     </a></li>
                     <li class="nav_item"><a href="#">
                         チャボを守る<span>CHABO for the future</span>
                     </a></li>
-                    <li class="nav_item"><a href="#">
+                    <!-- <li class="nav_item"><a href="#">
                         協会について<span>About us</span>
-                    </a></li>
-                    <li class="nav_item"><a href="#">
+                    </a></li> -->
+                    <li class="nav_item"><a href="../inquiry/">
                         お問い合わせ<span>Inquiry</span>
                     </a></li>
                 </ul>
             </nav>
         </div>
-    </header><!-- /#header -->
+    <!--/ header--></header>
     
-    <section id="main_visual">
+    <section id="main_visual" class="main_visual">
         <h1 class="main_visual_title">チャボを守る</h1>
     </section>
 
-    <main id="main">
+    <main id="main" class="main">
 
         <section class="section section1">
             <div class="inner">
@@ -116,16 +119,16 @@
             </section>
         </main>
 
-    <footer id="footer">
+    <footer id="footer" class="footer">
         <div class="footer_pagetop"><a href="#"><img class="footer_pagetop_img" src="../images/icon_arrow.png">Back to Top</a></div>
         <div class="footer_links">
             <ul class="footer_links_list">
-                <li class="footer_links_item"><a href="#">
+                <li class="footer_links_item"><a href="../whatischabo/">
                     <span class="en">What is CHABO?</span>
                     <p class="txt">チャボを知る</p>
                     <p class="img"><img src="../images/footerlink_whatischabo.jpg" alt=""></p>
                 </a></li>
-                <li class="footer_links_item"><a href="#">
+                <li class="footer_links_item"><a href="../lifewithchabo/">
                     <span class="en">Life with CHABO</span>
                     <p class="txt">チャボを愛でる</p>
                     <p class="img"><img src="../images/footerlink_lifewithchabo.jpg" alt=""></p>
@@ -135,9 +138,9 @@
                     <p class="txt">チャボを守る</p>
                     <p class="img"><img src="../images/footerlink_chaboforthefuture.jpg" alt=""></p>
                 </a></li>
-                <li class="footer_links_item"><a href="#">
-                    <span class="en">About us</span>
-                    <p class="txt">私たちについて</p>
+                <li class="footer_links_item"><a href="../inquiry/">
+                    <span class="en">Inquiry</span>
+                    <p class="txt">お問い合わせ</p>
                     <p class="img"><img src="../images/footerlink_aboutus.jpg" alt=""></p>
                 </a></li>
             </ul>
@@ -147,15 +150,15 @@
         </div>
         <nav class="footer_nav">
                 <ul class="nav_list upper">
-                    <li class="nav_item"><a href="./whatischabo/">チャボを知る</a></li>
-                    <li class="nav_item"><a href="./lifewithchabo/">チャボを愛でる</a></li>
-                    <li class="nav_item"><a href="./chaboforthefuture/">チャボを守る</a></li>
+                    <li class="nav_item"><a href="../whatischabo/">チャボを知る</a></li>
+                    <li class="nav_item"><a href="../lifewithchabo/">チャボを愛でる</a></li>
+                    <li class="nav_item"><a href="#">チャボを守る</a></li>
                     <li class="nav_item"><a href="#">協会について</a></li>
                 </ul>
                 <ul class="nav_list lower">
                     <li class="nav_item"><a href="#">お知らせ</a></li>
                     <li class="nav_item"><a href="#">プライバシーポリシー</a></li>
-                    <li class="nav_item"><a href="#">お問い合わせ</a></li>
+                    <li class="nav_item"><a href="../inquiry/">お問い合わせ</a></li>
                 </ul>
             </nav>
         <div class="footer_copyright">

@@ -3,15 +3,14 @@
 /* 目次
 0. リセットCSS
 0. 全体の色・フォント設定
-1. #header
-2. #main_visual (メインビジュアル+news)
-3. #main 
-4. #footer
+1. トップページ .header
+2. トップページ .main_visual (メインビジュアル+news)
+3. トップページ .main 
+4. トップページ .footer
 5. 下層ページ共通
 6. 下層ページ:チャボを知る
 7. 下層ページ:チャボを愛でる
 8. 下層ページ:チャボを守る
-
 */
 
 /* ---------------------------------
@@ -330,25 +329,49 @@ body {
     padding-right: 30px;
 	width: 1170px;
 }
+@media screen and (max-width: 767px) {
+    .inner {
+        padding-right: 16px;
+        padding-left: 16px;
+      }
+}
+
 .clearfix::after {
     content: "";
     display: block;
     clear: both;
 }
+
+/* デバイスごとの表示・非表示 */
 .sp {
     display: none;
 }
 .sp480 {
     display: none;
 }
-
+@media screen and (max-width: 767px) {
+    .pc {
+        display: none;
+    }
+    .sp {
+        display: block;
+    }
+}
+@media screen and (max-width: 480px) {
+    .sp480 {
+        display: block;
+    }
+    .pc480 {
+        display: none;
+    }
+}
 /* アニメーション */
 .js-scroll {
 	opacity:0;
 	transition: all 1.0s;
 	transform:translate(0px,50px) scale(1.1);
 }
-.js-scroll-slow {
+.js-scroll-stay {
 	opacity:0;
 	transition: all 1.0s;
 	transform:translate(0px,0px) scale(1.1);
@@ -358,7 +381,8 @@ body {
 	transform:translate(0px,0px) scale(1);
 }
 .js-scroll-up {
-	opacity:0;
+    opacity:0;
+    transition: all 1.0s;
 }
 .js-scroll-up-in {
 	opacity:1;
@@ -444,7 +468,7 @@ body {
     transform: rotate(210deg);
     transition: all 1s 1.0s;
 }
-@media only screen and (max-width: 1169px) {
+@media screen and (max-width: 1169px) {
     .footprint img {
         width: 6vw;
         height: 8vw;
@@ -501,17 +525,18 @@ body {
     }
 }
 
+
 /* ---------------------------------
-  1. #header
+  1. トップページ .header
 ------------------------------------ */
-#header {
+.header {
     background-color: #ffffff; 
     border-top: 3px solid #ba5447;
     box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
     position: relative;
     z-index: 20;
 }
-#header > .inner {
+.header > .inner {
     margin: 0 auto;
     padding: 0;
 }
@@ -559,7 +584,7 @@ body {
 }
 .header_nav .nav_item {
     padding: 5px 5px 5px;
-    width: 25%; /* 5つなら20% */
+    width: 20%; /* 5つなら20% */
     text-align: center;
     border-right: 1px solid #ddd;
 }
@@ -569,8 +594,6 @@ body {
 .header_nav .nav_item a {
     display: block;
     font-size: 2rem;
-    /* text-shadow: 1px 1px 0px #ccc;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3); */
     text-shadow: 1px 1px 0px rgba(204, 204, 204, 0.3);
     transition: all 0.3s;
 }
@@ -588,10 +611,221 @@ body {
     color: #007d8dcc;
 }
 
+@media screen and (max-width: 980px) {
+    .header_logo {
+        bottom: -39px;
+    }
+    .header_logo_img,
+    .header_logo::after {
+        width: 16.33vw;
+        height: 16.33vw;
+        min-width: 90px;
+        min-height: 90px;
+    }
+    .header_nav {
+        padding-left: 17.35vw;
+        padding-right: 1.02vw;
+    }
+    .header_nav .nav_list {
+        padding: 3.57vw 0 3.06vw;
+        font-size: 1.6rem;
+    }
+    .header_nav .nav_item a {
+        font-size: 1.6rem;
+    }
+    .header_nav .nav_item span {
+        padding-top: 0;
+    }
+}
+@media screen and (max-width: 767px) {
+    .header {
+        height: 80px;
+    }
+    .header > .inner {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .header_logo_type {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .header_logo_type_img {
+        width: 40vw;
+        min-width: 240px;
+        height: auto;
+    }
+
+    .header_nav_btn {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-right: 25px;
+        z-index: 1000;
+    }
+    .header_nav_btn span {
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 100%;
+    }
+    .nav_btn_line {
+        height: 1px;
+        background-color: #333;
+        -webkit-transition: all .4s;
+        transition: all .4s;
+    }
+    .nav_btn_line:nth-child(1) {
+        top: 0px;
+    }
+    .nav_btn_line:nth-child(2) {
+        top: 9px;
+    }
+    .nav_btn_line:nth-child(3) {
+        top: 18px;
+    }
+    .header_nav_btn .nav_btn_txt {
+        font-size: 1rem;
+        top: 22px;
+        text-align: center;
+    }
+    .header_nav {
+        display: none;
+        padding: 0;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        transition: all ease 0s;
+    }
+    .header_nav::before {
+        content: "";
+        opacity: 0;
+        width: 120%;
+        height: 120%;
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        background: rgba(0,0,0,0.65);
+        -webkit-transition: all ease 0.6s;
+        -moz-transition: all ease 0.6s;
+        -o-transition: all ease 0.6s;
+        -ms-transition: all ease 0.6s;
+        transition: all ease 0.6s;
+    }
+    .header_nav::after {
+        content: "";
+        opacity: 0;
+        width: 120%;
+        height: 120%;
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: url(../images/sp_menu_bg.jpg) no-repeat 43% 50%;
+        background-size: cover;
+        -webkit-transition: all ease 0.6s;
+        -moz-transition: all ease 0.6s;
+        -o-transition: all ease 0.6s;
+        -ms-transition: all ease 0.6s;
+        transition: all ease 0.6s;
+    }
+    .header_nav_logo {
+        display: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-top: 25px;
+    }
+    .header_nav_logo img {
+        width: 100px;
+        height: 100px;
+    }
+    .header_nav .nav_list {
+        display: block;
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 55%;
+        transform: translate(-50%,-50%);
+        padding: 0;
+    }
+    .header_nav .nav_item {
+        width: 100%;
+        padding: 12px 0;
+        border: 0;
+    }
+    .header_nav .nav_item a {
+        font-size: 2.5rem;
+        color: #ddd;
+    }
+
+    /* オープン時 */
+    .header_nav_btn.open .nav_btn_line {
+        background-color: #ddd;
+    }
+    .header_nav_btn.open .nav_btn_txt {
+        color: #ddd;
+        left: -3px;
+    }
+    .header_nav_btn.open .nav_btn_line:nth-child(1) {
+        transform: rotate(45deg) translate(8px,9px);
+    }
+    .header_nav_btn.open .nav_btn_line:nth-child(2) {
+        display: none;
+    }
+    .header_nav_btn.open .nav_btn_line:nth-child(3) {
+        transform: rotate(-45deg) translate(4px,-5px);
+    }
+
+   .header_nav.open,  .header_nav.open::before,  .header_nav.open::after {
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+   }
+   .header_nav.open .header_nav_logo {
+       display: block;
+   }
+}
+@media screen and (max-width: 480px) {
+    .header {
+        height: 60px;
+    }
+    .header > .inner {
+        padding-right: 3px;
+        padding-left: 3px;
+    }
+    .header_logo_img, 
+    .header_logo::after {
+        min-width: 68px;
+        min-height: 68px;
+    }
+    .header_logo_type_img {
+        min-width: 180px;
+        width: 50vw;
+    }
+    .header_nav_btn {
+        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+    }
+    .header_nav_btn .nav_btn_txt  {
+        left: -1px;
+    }
+}
 /* ---------------------------------
-  2. #main_visual
+  2. トップページ .main_visual
 ------------------------------------ */
-.toppage #main_visual {
+.toppage .main_visual {
     position: relative;
     box-shadow: 0 10px 20px 2px rgba(0,0,0,0.1);
     z-index: 10;
@@ -633,8 +867,6 @@ body {
 }
 .news_date {
     display: inline-block;
-    /* vertical-align: middle; */
-    /* width: 18%; */
     width: 22%;
     margin-right: 2%;
     text-align: center;
@@ -642,11 +874,8 @@ body {
 }
 .news_title {
     display: inline-block;
-    vertical-align: middle;
     vertical-align: bottom;
-    /* width: 78%; */
     width: 76%;
-    /* margin-left: 2%; */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -667,23 +896,84 @@ body {
 .news_btn a:hover {
     background-color: rgba(255,255,255,.2);
 }
+@media screen and (max-width: 980px) {
+    .news_date,
+    .news_title {
+        font-size: 1.6rem;
+    }
+    .news_btn {
+        font-size: 1.2rem;
+    }
+    .news_btn a {
+        padding: 3px 10px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .news {
+        padding: 10px 0;
+    }
+    .news_list {
+        display: block; 
+    }
+    .news_heading {
+        text-align: left;
+        border: none;
+        width: 100%;
+    }
+    .news_content {
+        width: 80%;
+        float: left;
+        padding-left: 0;
+    }
+    .news_date {
+        text-align: left;
+    }
+    .news_btn {
+        width: 20%;
+        display: inline-block;
+    }
+}
+@media screen and (max-width: 480px) {
+    .news_heading {
+        font-size: 1.6rem;
+    }
+    .news_date, 
+    .news_title {
+        font-size: 1.2rem;
+    }
+    .news_title {
+        text-align: right;
+    }
+    .news_btn {
+        font-size: 1rem;
+    }
+    .news_btn a {
+        padding: 1px 2px;
+    }
+}
 
 /* ---------------------------------
-  3. #main
+  3. トップページ .main
 ------------------------------------ */
-#main {
+.main {
     display: block;
     background: url("../images/top_bg.jpg") repeat;
 }
-#main > .inner {
+.main > .inner {
     padding-top: 130px;
 }
-
+@media screen and (max-width: 767px) {
+    .main > .inner {
+        padding-top: 100px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .main >.inner {
+        padding-top: 60px;
+    }
+}
 /* リード部分 */
 .main_lead {
-    /* width: 1180px; */
-    /*width: 86.38vw; */
-    /* justify-content: center; */
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
@@ -691,17 +981,11 @@ body {
     position: relative;
 }
 .main_lead_title {
-    /* width: 10.76vw; 1170px以下で適用する*/
     margin-right: 40px;
     position: relative;
     z-index: 1;
 }
 .main_lead_body {
-    /* padding-top: 315px; */
-    /* padding-top: 23.06vw; */
-    /* margin-right: 4.39vw; */
-    /* position: relative; */
-    /* text-align: justify; */
     text-align: right;
     margin-right: 120px;
     position: relative;
@@ -711,7 +995,6 @@ body {
 }
 .main_lead_txt {
     padding-top: 20px;
-    /* font-size: 1.46vw; */
     font-size: 2rem;
     line-height: 2.4;
 }
@@ -722,7 +1005,67 @@ body {
     z-index: 0;
     text-shadow: 0 0 2px rgba(255, 255, 255, 1.0);
 }
-
+@media screen and (max-width: 1070px) {
+    .main_lead {
+        justify-content: space-between;
+    }
+    .main_lead_title {
+        width: 14.4vw;
+    }
+    .main_lead_body {
+        width: 65vw;
+        margin-right: 20px;
+    }
+    .main_lead_txt {
+        font-size: 1.95vw;
+    }
+    .main_lead_img {
+        width: 63.8vw;
+        height: 55.6vw;
+    }
+}
+@media screen and (max-width: 767px) {
+    .main_lead {
+        display: block;
+    }
+    .main_lead::before,
+    .main_lead::after {
+        content: "";
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+        opacity: 0.6;
+    }
+    .main_lead::before {
+        background-image: url("../images/main_lead_img_osu.png");
+        width: 79vw;
+        height: 139vw;
+        top: -90px;
+        left: -60%;
+    }
+    .main_lead::after {
+        background-image: url("../images/main_lead_img_mesu.png");
+        width: 75vw;
+        height: 93vw;
+        bottom: -90px;
+        right: -48%;
+    }
+    .main_lead_title {
+        width: 70vw;
+        margin: 0 auto 50px;
+    }
+    .main_lead_body {
+        margin-right: 0;
+        width: auto;
+    }
+    .main_lead_txt {
+        text-align: center;
+        font-size: 3.75vw;
+    }
+    .main_lead_img {
+        display: none;
+    }
+}
 
 /* 下層リンク 共通パーツ*/
 /* 共通 contents_txt */
@@ -730,7 +1073,6 @@ body {
     background-color: rgba(255,255,255,0.6);
     box-shadow: 0 10px 20px 2px rgba(0,0,0,0.1);
     padding: 60px 0 0;
-    /* letter-spacing: 0.1em; */
     font-feature-settings: "palt" 1;
     width: 600px;
     position: relative;
@@ -757,7 +1099,6 @@ body {
     height: 1px;
     background-color: #999;
     position: absolute;
-    /* bottom: -12px; */
     bottom: -9px;
     left: 0;
 }
@@ -789,6 +1130,59 @@ body {
     margin-top: 5px;
     letter-spacing: 0.1em;
 }
+@media screen and (max-width: 1070px) {
+    .contents_txt {
+        width: calc(100% - 60px);
+        position: absolute;
+        bottom: -32vw;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 6vw 0 0;
+    }
+    .contents_txt_inner {
+        width: calc(100% - 60px);
+        padding-bottom: 8vw;
+    }
+    .contents_title {
+        font-size: 7vw;
+    }
+    .contents_title::after {
+        font-size: 1.5vw;
+    }
+    .contents_subtitle {
+        margin-top: 6vw;
+        font-size: 2.6vw;
+    }
+    .contents_desc {
+        font-size: 1.8vw;
+        margin-top: 0.6vw;
+    }
+}
+@media screen and (max-width: 480px) {
+    .contents_txt {
+        width: 90%;
+        bottom: -49vw;
+    }
+    .contents_title {
+        font-size: 30px;
+    }
+    .contents_title::after {
+        font-size: 10px;
+    }
+    .contents_subtitle, 
+    .contents_desc {
+        margin-left: 0;
+    }
+    .contents_subtitle {
+        margin-top: 8vw;
+        font-size: 14px;
+    }
+    .contents_desc {
+        font-size: 12px;
+    }
+}
 
 /* 共通 contents_link */
 .contents_link {
@@ -816,6 +1210,22 @@ body {
     box-shadow:0 6px 14px rgba(0, 0, 0, 0.24);
     transform:translate(0, -2px);
 }
+@media screen and (max-width: 1070px) {
+    .contents_link_btn {
+        width: 32.7vw;
+        height: 8.5vw;
+        line-height: 8.5vw;
+        font-size: 2vw;
+    }
+}
+@media screen and (max-width: 480px) {
+    .contents_link_btn {
+        width: 200px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 1.4rem;
+    }
+}
 
 /* 共通 contents_img */
 .contents_img {
@@ -826,19 +1236,13 @@ body {
     right: 0;
 }
 
-.content_box {
-
-}
-
 /* チャボを知る */
-.whatischabo > .inner {
-    padding: 0;
-}
 .whatischabo {
     position: relative;
     margin-top: 150px;
 }
 .whatischabo > .inner {
+    padding: 0;
     background: url(../images/whatischabo_img.png) no-repeat right top;
     background-size: contain;
     padding-top: 140px;
@@ -862,14 +1266,12 @@ body {
 }
 
 /* チャボを愛でる */
-.lifewithchabo > .inner {
-    padding: 0;
-}
 .lifewithchabo {
     position: relative;
     margin-top: 300px;
 }
 .lifewithchabo > .inner {
+    padding: 0;
     background: url(../images/lifewithchabo_img.png) no-repeat left top;
     background-size: contain;
     padding-top: 140px;
@@ -898,14 +1300,12 @@ body {
 
 
 /* チャボを守る */
-.chaboforthefuture > .inner {
-    padding: 0;
-}
 .chaboforthefuture {
     position: relative;
     margin-top: 300px;
 }
 .chaboforthefuture > .inner {
+    padding: 0;
     background: url(../images/chaboforthefuture_img.png) no-repeat right top;
     background-size: contain;
     padding-top: 140px;
@@ -929,10 +1329,80 @@ body {
     content: "CHABO for the future";
 }
 
+@media screen and (max-width: 1070px) {
+    .whatischabo > .inner,
+    .lifewithchabo > .inner,
+    .chaboforthefuture > .inner {
+        background-position: center top;
+        background-size: cover;
+        padding-top: 56%;
+        padding-bottom: 0;
+        position: relative;
+    }
+    .whatischabo > .inner {
+        background-image: url(../images/whatischabo_img_sp.png);
+    }
+    .lifewithchabo > .inner {
+        background-image: url(../images/lifewithchabo_img_sp.png);
+    }
+    .chaboforthefuture > .inner {
+        background-image: url(../images/chaboforthefuture_img_sp.png);
+    }
+    .whatischabo::before {
+        min-width: auto;
+        min-height: auto;
+        width: 41vw;
+        height: 76vw;
+        top: auto;
+        left: auto;
+        bottom: -80vw;
+        right: -2px;
+        transform: rotateY(190deg);
+        z-index: 0;
+    }
+    .lifewithchabo::before {
+        min-width: auto;
+        min-height: auto;
+        width: 37vw;
+        height: 90vw;
+        top: 15vw;
+        z-index: 0;
+    }
+    .chaboforthefuture::before {
+        min-width: auto;
+        min-height: auto;
+        width: 51vw;
+        height: 56vw;
+        top: auto;
+        left: auto;
+        bottom: -60vw;
+        right: -2px;
+        transform: rotateY(190deg);
+        z-index: 0;
+    }
+
+    .whatischabo {
+        margin-top: 19.6vw;
+    }
+    .lifewithchabo {
+        margin-top: 58.7vw;
+    }
+    .chaboforthefuture {
+        margin-top: 58.7vw;
+        margin-bottom: 39.1vw;
+    }
+}
+@media screen and (max-width: 480px) {
+    .lifewithchabo,
+    .chaboforthefuture {
+        margin-top: 82.7vw;
+    }
+}
+
 /* ---------------------------------
-  4. #footer
+  4. トップページ .footer
 ------------------------------------ */
-#main::after {
+.main::after {
     content: "";
     display: block;
     width: 100%;
@@ -941,22 +1411,22 @@ body {
     background: -webkit-linear-gradient(bottom, #000, transparent);
     background: linear-gradient(to top, #000, transparent);
 }
-#footer {
+@media screen and (max-width: 767px) {
+    .main::after {
+        height: 300px;
+    }
+}
+
+.footer {
     width: 100%;
     background-color: #000;
     padding: 20px 0 15px;
     margin-top: -1px;
 }
-
 .footer_logo {
-    /* width: 180px;
-    height: 180px; */
     width: 150px;
     height: 150px;
     margin: 0 auto;
-}
-.footer_nav {
-
 }
 .footer_nav .nav_list {
     padding: 0 0 0;
@@ -969,7 +1439,6 @@ body {
 .nav_list.lower {
     padding-top: 20px;
 }
-
 .footer_nav .nav_item a {
     color: #888;
     transition: all 0.3s;
@@ -997,14 +1466,34 @@ body {
     padding-top: 40px;
     letter-spacing: 0.1em;
 }
-
+@media screen and (max-width: 767px) {
+    .footer_logo {
+        width: 120px;
+        height: 120px;
+    }
+    .footer_nav {
+        display: none;
+    }
+    .footer_copyright {
+        padding-top: 0;
+    }
+}
+@media screen and (max-width: 480px) {
+    .footer_logo {
+        width: 100px;
+        height: 100px;
+    }
+    .footer_copyright {
+        font-size: 1.2rem;
+    }
+}
 /* ---------------------------------
   5. 下層ページ共通
 ------------------------------------ */
 /* 下層ページ共通 */
 
 /* 下層ページアイキャッチ */
-.subpage #main_visual {
+.subpage .main_visual {
     height: 36.6vw;
     max-height: 500px;
     background-repeat: no-repeat;
@@ -1014,7 +1503,7 @@ body {
     z-index: 10;
 }
 @media screen and (max-width: 767px) {
-    .subpage #main_visual {
+    .subpage .main_visual {
         height: 300px;
     }
 }
@@ -1025,7 +1514,6 @@ body {
     transform: translate(-50%, -50%);
     font-weight: normal;
     font-size: 56px;
-    /* font-size: 4.39vw; */
     text-shadow: 4px 9px 7px rgba(0, 0, 0, 0.3);
     color: #efefef;
     text-align: center;
@@ -1036,13 +1524,11 @@ body {
 @media screen and (max-width: 767px) {
     .main_visual_title {
         font-size: 3.6rem;
-        /* font-size: 5.29vw; */
     }
 }
 @media screen and (max-width: 480px) {
     .main_visual_title {
         font-size: 2.8rem;
-        /* font-size: 4.39vw; */
     }
 }
 
@@ -1086,6 +1572,11 @@ body {
     position: relative;
     background-color: #000;
 }
+@media screen and (max-width: 480px) {
+    .footer_links {
+        margin: 40px 0;
+    }
+}
 @media screen and (max-width: 767px) {
     .footer_links_item {
         width: 50%;
@@ -1116,7 +1607,6 @@ body {
     z-index: 1;
     right: 20px;
     bottom: 0;
-    /* height: 25px; */
     color: #fff;
 }
 .footer_links_item .img {
@@ -1125,7 +1615,6 @@ body {
 .footer_links_item .img img {
     -webkit-transition: opacity 1.0s,transform 1.0s;
     transition: opacity 1.0s,transform 1.0s;
-    /* vertical-align: bottom;  */
 }
 .footer_links_item a:hover .img img {
     -webkit-transform: scale(1.05);
@@ -1134,7 +1623,7 @@ body {
 }
 
 /* 他、下層共通パーツ */
-.subpage #main {
+.subpage .main {
     padding: 150px 0 0;
 }
 .subpage .section {
@@ -1162,7 +1651,7 @@ body {
     line-height: 2.4;
 }
 @media screen and (max-width: 767px) {
-    .subpage #main {
+    .subpage .main {
         padding: 100px 0 0;
     }
     .subpage .section {
@@ -1180,7 +1669,7 @@ body {
     }   
 }
 @media screen and (max-width: 480px) {
-    .subpage #main {
+    .subpage .main {
         padding: 70px 0 0;
     }
     .subpage .section {
@@ -1199,11 +1688,10 @@ body {
 /* ---------------------------------
   6. 下層ページ:チャボを知る
 ------------------------------------ */
-.subpage_whatischabo #main_visual {
+.subpage_whatischabo .main_visual {
     background-image: url(../images/whatischabo/main_visual.jpg);
     background-position: 70% center;
 }
-
 
 /* セクション1つめ */
 .subpage_whatischabo .section1 {
@@ -1215,7 +1703,6 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-
 @media screen and (max-width: 1169px) {
     .subpage_whatischabo .section1 {
         background-image: url(../images/whatischabo/whatischabo_sp_img1.jpg);
@@ -1293,7 +1780,6 @@ body {
 .variation_detail_list_item a:hover {
     color: #007d8dcc;
 }
-
 @media screen and (max-width: 1169px) {
     .subpage_whatischabo .section2 {
         background-image: none;
@@ -1328,7 +1814,6 @@ body {
     }
 }
 @media screen and (max-width: 480px) {
-    
     .subpage_whatischabo .variations {
         padding: 0 10px 5px;
     }
@@ -1361,7 +1846,7 @@ body {
 /* ---------------------------------
   7. 下層ページ:チャボを愛でる
 ------------------------------------ */
-.subpage_lifewithchabo #main_visual {
+.subpage_lifewithchabo .main_visual {
     background-image: url(../images/lifewithchabo/main_visual.jpg);
     background-position: center;
 }
@@ -1385,7 +1870,6 @@ body {
         width: 100%;
     }
 }
-
 @media screen and (max-width: 480px) {
     .subpage_lifewithchabo .section1 {
         padding-bottom: 50%;
@@ -1441,14 +1925,12 @@ body {
     font-size: 1.4rem;
     float: left;
     width: 40%;
-    /* margin-right: 10px; */
     padding-right: 10px;
     line-height: 1.2;
 }
 .subpage_lifewithchabo .location_detail dd {
     font-size: 1.2rem;
 }
-
 @media screen and (max-width: 767px) {
     .subpage_lifewithchabo .location_list_item {
         width: 100%;
@@ -1459,7 +1941,6 @@ body {
         margin: 170px auto 0;
     }
 }
-
 @media screen and (max-width: 480px) {
     .subpage_lifewithchabo .location_list_item_content {
         margin: 120px auto 0;
@@ -1467,9 +1948,6 @@ body {
     }
     .subpage_lifewithchabo .location_detail {
         margin-bottom: 5px;
-    }
-    .subpage_lifewithchabo .location_detail dt {
-        /* padding-right: 10px; */
     }
     .subpage_lifewithchabo .location_detail dd {
         float: left;
@@ -1481,7 +1959,7 @@ body {
 /* ---------------------------------
   8. 下層ページ:チャボを守る
 ------------------------------------ */
-.subpage_chaboforthefuture #main_visual {
+.subpage_chaboforthefuture .main_visual {
     background-image: url(../images/chaboforthefuture/main_visual.jpg);
     background-position: 7% center;
 }
@@ -1622,7 +2100,6 @@ body {
     transform: translateY(-55%);
 }
 .flow_item .tel {
-    /* font-size: 3.6rem; */
     font-size: 3.2rem;
 }
 @media screen and (max-width: 1169px)  {
@@ -1630,7 +2107,6 @@ body {
         padding-left: 20px;
         padding-right: 20px;
     }
-
 }
 @media screen and (max-width: 767px) {
     .subpage_chaboforthefuture .flow_list_item {
@@ -1644,7 +2120,6 @@ body {
         width: 80%;
     }
 }
-
 @media screen and (max-width: 480px) {
     .subpage_chaboforthefuture .information {
         padding: 15px;
